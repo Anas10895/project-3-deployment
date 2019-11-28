@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const PORT = process.env.PORT || 5600;
+const PORT = process.env.PORT || 5600; // only why to specifay a port
 
 const cors = require("cors");
 
@@ -106,7 +106,7 @@ app.get("/api/:id", function(req, res) {
 // After all routes
 // This code essentially serves the index.html file on any unknown routes.
 app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "build", "index.html")); // redirct all to index and the build file but you need to 88 -line 
 });
 
 app.listen(PORT, function() {
